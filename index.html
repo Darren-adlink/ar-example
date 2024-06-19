@@ -10,10 +10,10 @@
     </style>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        var debugContainer = document.getElementById('arjs-debugUIContainer');
-        if (debugContainer) {
-          debugContainer.style.display = 'none';
-        }
+        var debugElements = document.querySelectorAll('[id^="arjs-debug"]');
+        debugElements.forEach(function(el) {
+          el.parentNode.removeChild(el);
+        });
       });
     </script>
   </head>
