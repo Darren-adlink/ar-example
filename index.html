@@ -7,8 +7,15 @@
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
     <style>
       .a-enter-vr-button { display: none; }
-      #arjs-debugUIContainer { display: none; }
     </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var debugContainer = document.getElementById('arjs-debugUIContainer');
+        if (debugContainer) {
+          debugContainer.style.display = 'none';
+        }
+      });
+    </script>
   </head>
   <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs="sourceType: webcam;">
