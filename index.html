@@ -10,10 +10,14 @@
     </style>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        var debugElements = document.querySelectorAll('[id^="arjs-debug"]');
-        debugElements.forEach(function(el) {
-          el.parentNode.removeChild(el);
-        });
+        var removeDebugUI = function() {
+          var debugContainers = document.querySelectorAll('[id^="arjs-debug"]');
+          debugContainers.forEach(function(container) {
+            container.remove();
+          });
+        };
+        
+        setTimeout(removeDebugUI, 5000); // 等待5秒钟，确保所有调试信息都加载完毕后移除
       });
     </script>
   </head>
